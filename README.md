@@ -57,7 +57,14 @@ npm run build
 
 # And then
 
+# to fetch gold price for single date
 node dist/index.js --dates 2024-01-03
+
+# to fetch for many dates
+node dist/index.js --dates 2024-01-03 2024-01-04
+
+# to fetch for today
+node dist/index.js
 
 ```
 
