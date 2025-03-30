@@ -56,7 +56,6 @@ function App() {
         </button>
       </div>
       
-      {/* Table View */}
       <div style={{ marginBottom: '40px' }}>
         <h2>Table View</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -81,7 +80,6 @@ function App() {
         </table>
       </div>
 
-      {/* Graph View */}
       <div>
         <h2>Graph View</h2>
         <div style={{ width: '100%', height: '400px' }}>
