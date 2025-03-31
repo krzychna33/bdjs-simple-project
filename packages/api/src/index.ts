@@ -14,16 +14,14 @@ const port = 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://admin:password123@localhost:27037/gold-prices?authSource=admin';
 
 app.use(express.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 
-// Connect to MongoDB only if not in test environment
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect(MONGODB_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('MongoDB connection error:', err));
 }
 
-// Routes
 const goldPriceController = new GoldPriceController(new GoldPriceService());
 app.get('/api/gold-prices/get', validateDto(GetGoldPricesDto, 'query'), goldPriceController.getAllPrices);
 app.post('/api/gold-prices/add/single', validateDto(CreateGoldPriceDto), goldPriceController.createPrice);
